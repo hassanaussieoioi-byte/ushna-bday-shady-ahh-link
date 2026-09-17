@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1a0207" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="description" content="A small something, made for one person only." />
+<title>Happy Birthday, Ushna 💖</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-locked">
+
+<div class="app" id="app">
+
+  <!-- ── Act 1 · Consent gate ───────────────────────────────────────────── -->
+  <section class="scene scene--gate is-active" id="scene-gate" aria-labelledby="gate-title">
+    <div class="hearts" id="hearts-gate" aria-hidden="true"></div>
+
+    <div class="gate-card glass">
+      <p class="eyebrow">Before you begin</p>
+      <h1 class="gate-title" id="gate-title">
+        Happy Birthday, Ushna <span class="glyph">💖</span>
+      </h1>
+
+      <label class="consent" for="consent-box">
+        <input type="checkbox" id="consent-box" class="consent__input" />
+        <span class="consent__mark" aria-hidden="true"></span>
+        <span class="consent__text">
+          I agree to be spoiled today, and to smile at least once.
+        </span>
+      </label>
+
+      <button class="btn btn--primary" id="consent-btn" type="button" disabled>
+        I Consent
+      </button>
+
+      <p class="gate-hint" id="gate-hint" role="status">Tick the box to continue.</p>
+    </div>
+  </section>
+
+  <!-- ── Act 2 · The letter ─────────────────────────────────────────────── -->
+  <section class="scene scene--letter is-off" id="scene-letter" aria-labelledby="letter-title">
+    <div class="hearts hearts--soft" id="hearts-letter" aria-hidden="true"></div>
+
+    <h2 class="sr-only" id="letter-title">A letter for you</h2>
+    <p class="sr-only" id="letter-full"></p>
+
+    <div class="letter-wrap">
+      <p class="letter" id="letter" aria-hidden="true"><span class="caret" id="caret" aria-hidden="true"></span></p>
+    </div>
+
+    <div class="scene-bar">
+      <button class="btn btn--ghost is-hidden" id="scroll-cue" type="button">
+        Scroll down <span aria-hidden="true">&darr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Act 3 · The descent ────────────────────────────────────────────── -->
+  <section class="descent is-off" id="descent" aria-labelledby="descent-title">
+    <h2 class="sr-only" id="descent-title">One more thing, on the floor</h2>
+
+    <div class="descent__stage">
+      <div class="descent__zoom" id="descent-zoom">
+        <div class="hearts hearts--soft" aria-hidden="true"></div>
+        <div class="floor" aria-hidden="true"></div>
+
+        <button class="locket" id="locket" type="button" tabindex="-1"
+                aria-label="Pick up the locket">
+          <span class="locket__glow" aria-hidden="true"></span>
+          <svg class="locket__art" viewBox="0 0 120 140" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffe6b0" />
+                <stop offset=".45" stop-color="#e8a33d" />
+                <stop offset="1" stop-color="#8c5a12" />
+              </linearGradient>
+              <radialGradient id="hr" cx=".38" cy=".3" r=".85">
+                <stop offset="0" stop-color="#ff7d95" />
+                <stop offset="1" stop-color="#a30b28" />
+              </radialGradient>
+            </defs>
+            <path d="M60 26v-14a10 10 0 0 1 20 0" fill="none"
+                  stroke="url(#lg)" stroke-width="4" stroke-linecap="round" />
+            <path d="M60 30C42 12 10 30 14 60c5 36 44 56 46 62 2-6 41-26 46-62 4-30-28-48-46-30z"
+                  fill="url(#hr)" stroke="url(#lg)" stroke-width="4" />
+            <circle cx="60" cy="62" r="9" fill="#2c0409" opacity=".55" />
+            <path d="M60 68v18" stroke="#2c0409" stroke-width="5"
+                  stroke-linecap="round" opacity=".55" />
+          </svg>
+        </button>
+
+        <div class="vignette" aria-hidden="true"></div>
+      </div>
+
+      <p class="descent__cue" id="descent-cue" role="status">Keep scrolling&hellip;</p>
+
+      <button class="btn btn--ghost descent__skip is-hidden" id="descent-skip" type="button">
+        Take me there <span aria-hidden="true">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Act 4 · The post ───────────────────────────────────────────────── -->
+  <section class="scene scene--post is-off" id="scene-post" aria-labelledby="post-heading">
+    <div class="hearts hearts--soft" id="hearts-post" aria-hidden="true"></div>
+    <h2 class="sr-only" id="post-heading">A post, made just for you</h2>
+
+    <article class="post glass">
+      <header class="post__top">
+        <span class="post__avatar" aria-hidden="true">h</span>
+        <span class="post__who">
+          <strong>hassanbuilt</strong>
+          <small>Ushna&rsquo;s day &middot; original audio</small>
+        </span>
+        <span class="post__dots" aria-hidden="true">&bull;&bull;&bull;</span>
+      </header>
+
+      <div class="post__deck">
+        <div class="deck" id="deck" role="group" aria-roledescription="carousel"
+             aria-label="Eight photos of the birthday girl"></div>
+
+        <button class="deck__nav deck__nav--prev" id="deck-prev" type="button"
+                aria-label="Previous photo"><span aria-hidden="true">&lsaquo;</span></button>
+        <button class="deck__nav deck__nav--next" id="deck-next" type="button"
+                aria-label="Next photo"><span aria-hidden="true">&rsaquo;</span></button>
+
+        <span class="deck__count" id="deck-count" aria-hidden="true">1/8</span>
+        <span class="deck__hint" id="deck-hint" role="status">Swipe &rarr;</span>
+
+        <!-- Sits over the photo itself rather than at the bottom of the page,
+             so it lands in view the moment the last picture is reached. -->
+        <div class="post__end" id="post-end">
+          <p class="post__end-copy">That&rsquo;s the whole roll.</p>
+          <button class="btn btn--primary" id="bday-btn" type="button">
+            Happy Birthday <span aria-hidden="true">&#127874;</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="deck__dots" id="deck-dots" aria-hidden="true"></div>
+
+      <div class="post__bar">
+        <button class="like" id="like-btn" type="button" aria-pressed="false"
+                aria-label="Like this post">
+          <span class="like__heart" aria-hidden="true">&#9829;</span>
+          <span class="like__pop" aria-hidden="true"></span>
+        </button>
+        <span class="post__meta"><strong id="like-count">1,284</strong> likes</span>
+        <span class="post__meta post__meta--dim">8 photos</span>
+      </div>
+
+      <div class="post__caption">
+        <p><strong>hassanbuilt</strong> My GF&rsquo;s birthday <span class="glyph">&#127874;</span></p>
+        <p class="post__tags">#happybirthday #mygirl #ushna #birthdaygirl
+          #blessed #loveyou #anotheryear #agoodone</p>
+      </div>
+
+      <div class="post__comments" id="comments"></div>
+    </article>
+  </section>
+
+  <!-- ── Act 5 · Reveal ────────────────────────────────────────────────── -->
+  <section class="scene scene--reveal is-off" id="scene-reveal" aria-labelledby="reveal-title">
+    <div class="hearts" id="hearts-reveal" aria-hidden="true"></div>
+    <div class="tiles" id="tiles" aria-hidden="true"></div>
+    <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+    <div class="burst" id="burst" aria-hidden="true"></div>
+
+    <div class="deck-stage">
+      <div class="turntable" id="turntable">
+        <span class="turntable__plinth" aria-hidden="true"></span>
+        <span class="turntable__pads" aria-hidden="true"></span>
+
+        <span class="disc" id="disc" aria-hidden="true">
+          <span class="disc__grooves"></span>
+          <span class="disc__label"><b>for<br />Ushna</b><i>33&#8531; rpm</i></span>
+          <span class="disc__hole"></span>
+        </span>
+
+        <span class="tonearm" id="tonearm" aria-hidden="true">
+          <span class="tonearm__pivot"></span>
+          <span class="tonearm__tube"></span>
+          <span class="tonearm__head"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="reveal__overlay">
+      <h2 class="reveal__title" id="reveal-title">
+        Happy Birthday,
+        <!-- The name flips between her two names on a slow loop. -->
+        <span class="flip" id="name-flip" aria-label="Ushna Nadeem">
+          <span class="flip__word">Ushna</span>
+        </span>
+        <span class="glyph">&#128150;</span>
+      </h2>
+      <p class="reveal__sub">You deserve a good one.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- A deliberate one-frame gag, then straight into the last act. -->
+<div class="flash" id="flash" aria-hidden="true">
+  <img src="assets/monkey.jpeg" alt="" draggable="false" />
+</div>
+
+<button class="sound-chip is-hidden" id="sound-chip" type="button">
+  <span aria-hidden="true">🔈</span> Tap for sound
+</button>
+
+<p class="sr-only" id="live" role="status" aria-live="polite"></p>
+
+<audio id="music-loop" src="assets/site-music.mp3" loop preload="auto"></audio>
+<audio id="music-final" src="assets/final.mp3" loop preload="none"></audio>
+
+<script src="app.js" defer></script>
+</body>
+</html>
